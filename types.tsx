@@ -14,7 +14,7 @@ declare global {
 }
 
 export type RootStackParamList = {
-  Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  Root:  undefined;
   Modal: undefined;
   NotFound: undefined;
 };
@@ -25,11 +25,33 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Nati
 >;
 
 export type RootTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Home: undefined;
+  "Coming Soon": undefined;
+  Search: undefined;
+  Downloads: undefined;
+
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>
 >;
+
+export type HomeParamList = {
+  HomeScreen: undefined;
+  MovieDetailsScreen: undefined;
+}
+
+export type TabTwoParamList = {
+  TabTwoScreen: undefined;
+}
+
+export type Episode = {
+  id:string,
+  title:string,
+  poster:string,
+  duration:string,
+  plot:string,
+  video:string
+}
+
